@@ -17,7 +17,6 @@ import {
 import GoogleButton from '@/appPages/auth/components/pages/authButtons/GoogleButton';
 import GitHubButton from '@/appPages/auth/components/pages/authButtons/GitHubButton';
 import AppleButton from '@/appPages/auth/components/pages/authButtons/AppleButton';
-import logo from '@/assets/logo.png';
 
 const company_logos = [
 	{
@@ -157,7 +156,7 @@ const AuthPage: FC = () => {
 							<Link href="/" className={`${scss.logo_link}`}>
 								<Image
 									className={scss.icon}
-									src={logo}
+									src={logo_wedevx}
 									width={100}
 									height={100}
 									priority
