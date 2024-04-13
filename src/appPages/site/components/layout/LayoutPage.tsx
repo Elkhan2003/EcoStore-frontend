@@ -26,7 +26,7 @@ export default LayoutPage;
 // import scss from './LayoutPage.module.scss';
 // import Header from '@/appPages/site/components/layout/header/Header';
 // import Footer from '@/appPages/site/components/layout/footer/Footer';
-// import Preloader from '@/appPages/site/components/ui/preLoader/Preloader';
+// import Preloader from '@/appPages/site/components/UI/preLoader/Preloader';
 // import { useGetMeQuery } from '@/redux/api/me';
 
 // interface LayoutPageType {
