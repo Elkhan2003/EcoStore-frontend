@@ -1,6 +1,6 @@
 'use client';
 import { FC, ReactNode } from 'react';
-import { store } from '../redux/store';
+import { store } from '@/redux/store';
 import { Provider } from 'react-redux';
 
 interface ReduxProviderType {

@@ -2,7 +2,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import scss from './Header.module.scss';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const links = [
 	{
@@ -10,16 +10,8 @@ const links = [
 		href: '/'
 	},
 	{
-		label: 'Dashboard',
-		href: '/dashboard'
-	},
-	{
-		label: 'Statistics',
-		href: '/statistics'
-	},
-	{
-		label: 'Rating of users',
-		href: '/rating'
+		label: 'About',
+		href: '/about'
 	}
 ];
 
@@ -27,7 +19,6 @@ const Header: FC = () => {
 	const [headerScroll, setHeaderScroll] = useState<boolean>(false);
 	const [isMobile, setIsMobile] = useState(true);
 	const pathname = usePathname();
-	const router = useRouter();
 
 	useEffect(() => {
 		const changeHeader = () => {
@@ -63,12 +54,12 @@ const Header: FC = () => {
 		};
 	}, []);
 
-	const logout = () => {
-		window.open(
-			`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/logout`,
-			'_self'
-		);
-	};
+	// const logout = () => {
+	// 	window.open(
+	// 		`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/logout`,
+	// 		'_self'
+	// 	);
+	// };
 
 	return (
 		<>
