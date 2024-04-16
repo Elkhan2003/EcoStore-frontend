@@ -12,9 +12,9 @@ const LayoutRoot: FC<LayoutRootType> = ({ children }) => {
 	const antdThemeConfig = {
 		algorithm: theme.darkAlgorithm,
 		token: {
-			colorPrimary: '#9336fd',
+			colorPrimary: '#cb11ab',
 			// borderRadius: 2,
-			colorBgContainer: '#2a2a2a'
+			colorBgContainer: '#1a1a25'
 		}
 	};
 

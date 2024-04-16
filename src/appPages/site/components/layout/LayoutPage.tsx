@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 import scss from './LayoutPage.module.scss';
 import Header from '@/appPages/site/components/layout/header/Header';
 import Footer from '@/appPages/site/components/layout/footer/Footer';
@@ -9,11 +9,34 @@ interface LayoutPageType {
 }
 
 const LayoutPage: FC<LayoutPageType> = ({ children }) => {
+	const [isScroll, setIsScroll] = useState<boolean>(false);
+
+	useEffect(() => {
+		const changeHeader = () => {
+			if (window.scrollY >= 77) {
+				setIsScroll(true);
+			} else {
+				setIsScroll(false);
+			}
+		};
+
+		changeHeader();
+		window.addEventListener('scroll', changeHeader);
+
+		return () => {
+			window.removeEventListener('scroll', changeHeader);
+		};
+	}, []);
+
 	return (
 		<>
 			<div className={scss.layout}>
 				<Header />
-				<main>{children}</main>
+				<main
+					className={isScroll ? `${scss.main} ${scss.active}` : `${scss.main}`}
+				>
+					{children}
+				</main>
 				<Footer />
 			</div>
 		</>

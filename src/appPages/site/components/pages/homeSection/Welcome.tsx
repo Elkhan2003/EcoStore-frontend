@@ -6,7 +6,61 @@ const Welcome: FC = () => {
 		<>
 			<section className={scss.Welcome}>
 				<div className="container">
-					<div className={scss.content}>Welcome</div>
+					<div className={scss.content}>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+						<h1>Welcome</h1>
+					</div>
 				</div>
 			</section>
 		</>
