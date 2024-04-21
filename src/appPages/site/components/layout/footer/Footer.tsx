@@ -51,7 +51,7 @@ const Footer: FC = () => {
 								<div className={scss.block}>
 									<h1 className={scss.title}>Помощь и сервисы</h1>
 									<div className={scss.links}>
-										<Link href="#">О магазине</Link>
+										<Link href="/about">О магазине</Link>
 										<Link href="#">Доставка</Link>
 										<Link href="#">FAQ</Link>
 										<Link href="#">Контакты</Link>
@@ -69,13 +69,16 @@ const Footer: FC = () => {
 									персональных данных
 								</p>
 								<div className={scss.info}>
-									<a href="https://wa.me/996706215289">
+									<a target="_blank" href="https://wa.me/996706215289">
 										<IconPhone /> +996 (706) 21 52 89
 									</a>
-									<a href="https://mail.google.com/mail/u/0/#inbox">
+									<a
+										target="_blank"
+										href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=boss.armsport@gmail.com"
+									>
 										<IconMail /> boss.armsport@gmail.com
 									</a>
-									<a href="https://go.2gis.com/ifsp9">
+									<a target="_blank" href="https://go.2gis.com/ifsp9">
 										<IconMapPin /> г.Бишкек, ул. Гражданская 119
 									</a>
 									<a href="#">
@@ -89,7 +92,7 @@ const Footer: FC = () => {
 							<Link href="/">
 								<IconGadgetarium />
 							</Link>
-							<p>© 2022 Gadgetarium. Интернет магазин Все права защищены.</p>
+							<p>© 2024 Gadgetarium. Интернет магазин Все права защищены.</p>
 						</div>
 					</div>
 				</div>
