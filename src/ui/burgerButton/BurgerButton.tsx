@@ -1,35 +1,34 @@
-'use client';
-import React, { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import scss from './BurgerButton.module.scss';
 
-interface BurgerButtonType {
-	isOpen: boolean;
-	setIsOpen: (isOpen: boolean) => void;
+interface burgerButtonProps {
+	checked: boolean;
+	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
-const BurgerButton: FC<BurgerButtonType> = ({ isOpen, setIsOpen }) => {
+
+const BurgerButton: FC<burgerButtonProps> = ({ checked, onChange }) => {
 	return (
 		<>
-			<div className={scss.BurgerButton}>
-				<div
-					className={
-						isOpen ? `${scss.nav_icon_1} ${scss.open}` : `${scss.nav_icon_1}`
-					}
-					onClick={() => {
-						setIsOpen(!isOpen);
-					}}
-				>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
+			<div className={scss.nav}>
+				<input type="checkbox" checked={checked} onChange={onChange} />
+				<svg>
+					<use xlinkHref="#menu" />
+					<use xlinkHref="#menu" />
+				</svg>
+
+				{/* SVG */}
+				<svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }}>
+					<symbol
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 100 56"
+						id="menu"
+					>
+						<path d="M48.33,45.6H18a14.17,14.17,0,0,1,0-28.34H78.86a17.37,17.37,0,0,1,0,34.74H42.33l-21-21.26L47.75,4" />
+					</symbol>
+				</svg>
 			</div>
 		</>
 	);
 };
+
 export default BurgerButton;

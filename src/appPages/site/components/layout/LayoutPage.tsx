@@ -1,7 +1,9 @@
 'use client';
 import React, { FC, ReactNode, useEffect, useState } from 'react';
 import scss from './LayoutPage.module.scss';
-import Header from '@/appPages/site/components/layout/header/Header';
+import SupHeader from '@/appPages/site/components/layout/header/SupHeader';
+import SubHeader from '@/appPages/site/components/layout/header/SubHeader';
+import HeaderMobile from '@/appPages/site/components/layout/header/HeaderMobile';
 import Footer from '@/appPages/site/components/layout/footer/Footer';
 
 interface LayoutPageType {
@@ -9,34 +11,52 @@ interface LayoutPageType {
 }
 
 const LayoutPage: FC<LayoutPageType> = ({ children }) => {
-	const [isScroll, setIsScroll] = useState<boolean>(false);
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [isMobile, setIsMobile] = useState(true);
+	const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
 
 	useEffect(() => {
-		const changeHeader = () => {
-			if (window.scrollY >= 77) {
-				setIsScroll(true);
+		const changeIsMobile = () => {
+			if (window.innerWidth < 1100) {
+				setIsMobile(true);
 			} else {
-				setIsScroll(false);
+				setIsMobile(false);
 			}
 		};
-
-		changeHeader();
-		window.addEventListener('scroll', changeHeader);
-
+		changeIsMobile();
+		window.addEventListener('resize', changeIsMobile);
 		return () => {
-			window.removeEventListener('scroll', changeHeader);
+			window.removeEventListener('resize', changeIsMobile);
+		};
+	}, []);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 75);
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 
 	return (
 		<>
 			<div className={scss.layout}>
-				<Header />
-				<main
-					className={isScroll ? `${scss.main} ${scss.active}` : `${scss.main}`}
-				>
-					{children}
-				</main>
+				{!isMobile ? (
+					<>
+						<SupHeader />
+						<SubHeader isMobile={isMobile} isScrolled={isScrolled} />
+					</>
+				) : (
+					<>
+						<HeaderMobile
+							isOpenMobileMenu={isOpenMobileMenu}
+							setIsOpenMobileMenu={setIsOpenMobileMenu}
+						/>
+					</>
+				)}
+				<main>{children}</main>
 				<Footer />
 			</div>
 		</>
@@ -47,7 +67,7 @@ export default LayoutPage;
 // 'use client';
 // import React, { FC, ReactNode, useEffect, useState } from 'react';
 // import scss from './LayoutPage.module.scss';
-// import Header from '@/appPages/site/components/layout/header/Header';
+// import SupHeader from '@/appPages/site/components/layout/header/SupHeader';
 // import Footer from '@/appPages/site/components/layout/footer/Footer';
 // import Preloader from '@/appPages/site/components/ui/preLoader/Preloader';
 // import { useGetMeQuery } from '@/redux/api/me';
@@ -72,7 +92,7 @@ export default LayoutPage;
 // 				<Preloader />
 // 			) : (
 // 				<div className={scss.layout}>
-// 					<Header />
+// 					<SupHeader />
 // 					<main>{children}</main>
 // 					<Footer />
 // 				</div>

@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 const Footer: FC = () => {
 	return (
 		<>
-			<div className={`${scss.footer__page} ${scss.text__z__index}`}>
+			<footer className={`${scss.footer__page} ${scss.text__z__index}`}>
 				<div className="container">
 					<div className={scss.content}>
 						<p>Copyright © 2024. All rights are reserved</p>
@@ -37,7 +37,7 @@ const Footer: FC = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</footer>
 		</>
 	);
 };
