@@ -17,6 +17,7 @@ import {
 import GoogleButton from '@/appPages/auth/components/pages/authButtons/GoogleButton';
 import GitHubButton from '@/appPages/auth/components/pages/authButtons/GitHubButton';
 import AppleButton from '@/appPages/auth/components/pages/authButtons/AppleButton';
+import { IconGadgetarium } from '@/assets/icons';
 
 const company_logos = [
 	{
@@ -154,15 +155,16 @@ const AuthPage: FC = () => {
 					<div className={scss.container}>
 						<div className={scss.content}>
 							<Link href="/" className={`${scss.logo_link}`}>
-								<Image
-									className={scss.icon}
-									src={logo_wedevx}
-									width={100}
-									height={100}
-									priority
-									alt="logo"
-								/>
-								Elcho<span>Crud</span>
+								{/*<Image*/}
+								{/*	className={scss.icon}*/}
+								{/*	src={logo_wedevx}*/}
+								{/*	width={100}*/}
+								{/*	height={100}*/}
+								{/*	priority*/}
+								{/*	alt="logo"*/}
+								{/*/>*/}
+								{/*Elcho<span>Crud</span>*/}
+								<IconGadgetarium />
 							</Link>
 							<div className={scss.auth_buttons}>
 								<h2 className={scss.title}>Welcome back 👋</h2>

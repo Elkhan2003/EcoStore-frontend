@@ -17,6 +17,8 @@
 	transition: 0.2s;
 	cursor: pointer;
 
+	color: #fff;
+
 	span {
 		display: flex;
 		justify-content: center;
@@ -60,7 +62,7 @@
 }
 
 .AppleButton {
-	background: #000000;
+	//background: #000000;
 	background: #dadada;
 
 	cursor: not-allowed;

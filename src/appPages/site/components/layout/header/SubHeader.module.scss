@@ -30,7 +30,10 @@
 			}
 
 			.logo {
-				transition: all 3s ease-in-out;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
 			}
 
 			.catalog {
@@ -86,6 +89,7 @@
 			.icon {
 				position: relative;
 				cursor: pointer;
+				color: #fff;
 				transition: 0.2s;
 
 				&:hover {
