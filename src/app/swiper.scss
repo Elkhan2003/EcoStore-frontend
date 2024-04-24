@@ -1,0 +1,9 @@
+.swiper-pagination-bullet {
+	width: 14px;
+	height: 14px;
+	background: #cb11ab;
+	@media (max-width: 700px) {
+		width: 10px;
+		height: 10px;
+	}
+}

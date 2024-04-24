@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import AboutMe from '@/appPages/site/components/pages/aboutSection/AboutMe';
+import AboutStore from '@/appPages/site/components/pages/aboutSection/AboutStore';
 
 const AboutPage: FC = () => {
 	return (
 		<>
-			<AboutMe />
+			<AboutStore />
 		</>
 	);
 };

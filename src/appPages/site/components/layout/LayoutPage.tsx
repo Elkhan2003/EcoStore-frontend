@@ -5,6 +5,8 @@ import SupHeader from '@/appPages/site/components/layout/header/SupHeader';
 import SubHeader from '@/appPages/site/components/layout/header/SubHeader';
 import HeaderMobile from '@/appPages/site/components/layout/header/HeaderMobile';
 import Footer from '@/appPages/site/components/layout/footer/Footer';
+import { useGetCarouselQuery } from '@/redux/api/carousel';
+import Preloader from '@/ui/preLoader/Preloader';
 
 interface LayoutPageType {
 	children: ReactNode;
@@ -14,6 +16,15 @@ const LayoutPage: FC<LayoutPageType> = ({ children }) => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobile, setIsMobile] = useState(true);
 	const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+
+	const { status } = useGetCarouselQuery();
+	const [isPreLoader, setIsPreloader] = useState(true);
+
+	useEffect(() => {
+		if (status === 'fulfilled' || status === 'rejected') {
+			setIsPreloader(false);
+		}
+	}, [status]);
 
 	useEffect(() => {
 		const changeIsMobile = () => {
@@ -42,23 +53,31 @@ const LayoutPage: FC<LayoutPageType> = ({ children }) => {
 
 	return (
 		<>
-			<div className={scss.layout}>
-				{!isMobile ? (
-					<>
-						<SupHeader />
-						<SubHeader isMobile={isMobile} isScrolled={isScrolled} />
-					</>
-				) : (
-					<>
-						<HeaderMobile
-							isOpenMobileMenu={isOpenMobileMenu}
-							setIsOpenMobileMenu={setIsOpenMobileMenu}
-						/>
-					</>
-				)}
-				<main>{children}</main>
-				<Footer />
-			</div>
+			{!isPreLoader ? (
+				<>
+					<div className={scss.layout}>
+						{!isMobile ? (
+							<>
+								<SupHeader />
+								<SubHeader isMobile={isMobile} isScrolled={isScrolled} />
+							</>
+						) : (
+							<>
+								<HeaderMobile
+									isOpenMobileMenu={isOpenMobileMenu}
+									setIsOpenMobileMenu={setIsOpenMobileMenu}
+								/>
+							</>
+						)}
+						<main>{children}</main>
+						<Footer />
+					</div>
+				</>
+			) : (
+				<>
+					<Preloader />
+				</>
+			)}
 		</>
 	);
 };
@@ -69,7 +88,7 @@ export default LayoutPage;
 // import scss from './LayoutPage.module.scss';
 // import SupHeader from '@/appPages/site/components/layout/header/SupHeader';
 // import Footer from '@/appPages/site/components/layout/footer/Footer';
-// import Preloader from '@/appPages/site/components/ui/preLoader/Preloader';
+// import Preloader from '@/appPages/site/components/ui/preLoader_old/Preloader';
 // import { useGetMeQuery } from '@/redux/api/me';
 
 // interface LayoutPageType {

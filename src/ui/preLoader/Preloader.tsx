@@ -1,13 +1,14 @@
-import React from 'react';
-import scss from './PreLoader.module.scss';
+import scss from './Preloader.module.scss';
+import { IconGadgetarium } from '@/assets/icons';
 
 const Preloader = () => {
 	return (
-		<div className={scss.loader}>
-			<div className={scss.infinityChrome}>
-				<div></div>
-				<div></div>
-				<div></div>
+		<div className={scss.Preloader}>
+			<div className={scss.ring}></div>
+			<div className={scss.ring}></div>
+			<div className={scss.ring}></div>
+			<div className={scss.icon}>
+				<IconGadgetarium />
 			</div>
 		</div>
 	);

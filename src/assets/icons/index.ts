@@ -1,4 +1,5 @@
 export { default as IconGadgetarium } from './icon-gadgetarium';
+export { default as IconPinkTree } from './icon-pink-tree';
 export { default as IconCertificate } from './icon-сertificate';
 export { default as IconTools } from './icon-tools';
 export { default as IconCreditCard } from './icon-credit-card';
